@@ -1,9 +1,27 @@
-#map {
+#map-card {
     width: min(500px, 80vw);
+}
+#map {
+    width: 100%;
     height: min(500px, 80vw);
 }
 .text-uppercase {
     text-transform: uppercase;
+}
+.image-radio {
+    cursor: pointer;
+    display: inline-block;
+    border: 2px solid transparent;
+}
+.image-radio img {
+    width: 50px; /* Dimensione dell'immagine */
+    height: auto;
+}
+input[type="radio"] {
+    display: none; /* Nasconde il radio button */
+}
+input[type="radio"]:checked + .image-radio {
+    border-color: #f58723; /* Colore di evidenziazione */
 }
 
 @media (min-width: 768px) {

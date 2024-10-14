@@ -76,7 +76,7 @@ function initMap() {
 
             map.setCenter(place.geometry.location);
             
-            addCustomMarker(map.getCenter());
+            addCustomMarker(map.getCenter(), true);
 
             // Aggiorna il testo visualizzato con l'indirizzo del luogo selezionato
             text = place.formatted_address || place.name;
@@ -88,6 +88,8 @@ function initMap() {
             } else {
                 bounds.extend(place.geometry.location);
             }
+            
+            addCustomMarker(map.getCenter(), null);
         });
 
         map.fitBounds(bounds);
@@ -110,8 +112,12 @@ function initMap() {
     });
 }
 
-function addCustomMarker(position) {
+function addCustomMarker(position, reset = false) {
     if (marker) marker.setMap(null);
+
+    if (reset) {
+        return;
+    }
 
     const selectedPin = document.querySelector('input[name="pin"]:checked').value;
 
@@ -119,13 +125,13 @@ function addCustomMarker(position) {
 
     switch (selectedPin) {
         case "red":
-            iconUrl = "https://cdn-icons-png.flaticon.com/256/12392/12392532.png";
+            iconUrl = "https://cdn-icons-png.flaticon.com/256/12392/12392532.png"; // Sostituisci con il percorso della tua immagine PNG rossa
             break;
         case "blue":
-            iconUrl = "https://cdn-icons-png.freepik.com/256/3177/3177446.png?semt=ais_hybrid";
+            iconUrl = "https://cdn-icons-png.freepik.com/256/3177/3177446.png?semt=ais_hybrid"; // Sostituisci con il percorso della tua immagine PNG blu
             break;
         case "green":
-            iconUrl = "https://cdn-icons-png.flaticon.com/128/7954/7954340.png";
+            iconUrl = "https://cdn-icons-png.flaticon.com/128/7954/7954340.png"; // Sostituisci con il percorso della tua immagine PNG verde
             break;
         default:
             iconUrl = null; // Nessun pin se "default"

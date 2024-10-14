@@ -12,7 +12,7 @@
     <div id="main-container" class="container-fluid">
         <div class="row h-100">
             <div class="col-12 col-md-8 d-flex justify-content-center align-items-center py-5 py-md-0 h-100">
-                <div class="card d-inline-block shadow">
+                <div id="map-card" class="card d-inline-block shadow">
                     <div class="card-img-top overflow-hidden">
                         <div id="map"></div>
                     </div>
@@ -40,19 +40,42 @@
                         <label for="search-input" class="form-label fw-bold">Indirizzo</label>
                         <input type="text" class="form-control" id="search-input" placeholder="Cerca un indirizzo...">
                     </div>
+
                     <div>
                         <label class="form-label fw-bold">Pin</label>
                     </div>
-                    <label><input type="radio" name="pin" value="default" checked> Nessuno</label>
-                    <label><input type="radio" name="pin" value="red"> Pin Rosso</label>
-                    <label><input type="radio" name="pin" value="blue"> Pin Blu</label>
-                    <label><input type="radio" name="pin" value="green"> Pin Verde</label>
+                    <div class="row text-center">
+                        <div class="col-6 col-sm-3">
+                            <label>
+                                <input type="radio" name="pin" value="default">
+                                <span class="image-radio"><img src="https://cdn-icons-png.flaticon.com/256/3917/3917759.png" alt="Nessuno"></span>
+                            </label>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <label>
+                                <input type="radio" name="pin" value="red">
+                                <span class="image-radio"><img src="https://cdn-icons-png.flaticon.com/256/12392/12392532.png" alt="Pin Rosso"></span>
+                            </label>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <label>
+                                <input type="radio" name="pin" value="blue">
+                                <span class="image-radio"><img src="https://cdn-icons-png.freepik.com/256/3177/3177446.png?semt=ais_hybrid" alt="Pin Blu"></span>
+                            </label>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <label>
+                                <input type="radio" name="pin" value="green">
+                                <span class="image-radio"><img src="https://cdn-icons-png.flaticon.com/128/7954/7954340.png" alt="Pin Verde"></span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjHoaE0hrvvXWtsoygMnuEXsqgu9v_e1o&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjHoaE0hrvvXWtsoygMnuEXsqgu9v_e1o&libraries=places,marker"></script>
     <script src="./scripts.js"></script>
 </body>
 </html>
