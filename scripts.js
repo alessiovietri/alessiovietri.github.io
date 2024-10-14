@@ -125,10 +125,10 @@ function addCustomMarker(position, reset = false) {
 
     switch (selectedPin) {
         case "red":
-            iconUrl = "https://cdn-icons-png.flaticon.com/256/12392/12392532.png"; // Sostituisci con il percorso della tua immagine PNG rossa
+            iconUrl = "https://cdn-icons-png.flaticon.com/256/3018/3018057.png"; // Sostituisci con il percorso della tua immagine PNG rossa
             break;
         case "blue":
-            iconUrl = "https://cdn-icons-png.freepik.com/256/3177/3177446.png?semt=ais_hybrid"; // Sostituisci con il percorso della tua immagine PNG blu
+            iconUrl = "https://cdn-icons-png.flaticon.com/256/7561/7561199.png"; // Sostituisci con il percorso della tua immagine PNG blu
             break;
         case "green":
             iconUrl = "https://cdn-icons-png.flaticon.com/128/7954/7954340.png"; // Sostituisci con il percorso della tua immagine PNG verde
