@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps Example</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        #map-container {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #map {
+            width: 500px;
+            height: 500px;
+        }
+        #controls {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .map-frame {
+            border: 1px solid #ddd;
+            -webkit-box-shadow: 0px 4px 10px 0px #000000; 
+            box-shadow: 0px 4px 10px 0px #000000;
+        }
+        #text-container {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: bold;
+            padding: 15px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div id="map-container">
+        <div class="map-frame">
+            <div id="map"></div>
+            <div id="text-container">
+                Qui va il tuo testo
+            </div>
+        </div>
+    </div>
+    <div id="controls">
+        <input type="text" id="text-input" placeholder="Inserisci il tuo testo..." value="Qui va il tuo testo">
+        <input type="text" id="search-input" placeholder="Cerca una posizione...">
+        <label><input type="radio" name="pin" value="default" checked> Nessun pin</label>
+        <label><input type="radio" name="pin" value="red"> Pin Rosso</label>
+        <label><input type="radio" name="pin" value="blue"> Pin Blu</label>
+        <label><input type="radio" name="pin" value="green"> Pin Verde</label>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjHoaE0hrvvXWtsoygMnuEXsqgu9v_e1o&libraries=places"></script>
+    <script src="./scripts.js"></script>
+</body>
+</html>

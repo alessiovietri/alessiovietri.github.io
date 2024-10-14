@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mappa DeArtis</title>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTiDnnnv42Qw4FOUGt24oMajVBW91H_iw"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/geojson2svg/2.0.1/geojson2svg.min.js" integrity="sha512-KnwqfcSa+Ngtm4HX89YvcwV9DR/5egGaxgZEs0bA/5V003UK1FqPd2u7lJ0YyYuDHOcFbEAdej80OYNezXJPqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body onload="initMap()">
+        <div id="map" style="height: 500px; width: 100%;"></div>
+        
+        <script>
+            let map = null;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById("map"), {
+                    center: { lat: 40.7128, lng: -74.0060 },
+                    zoom: 12,
+                    styles: [
+                        {
+                            "featureType": "all",
+                            "elementType": "geometry",
+                            "stylers": [
+                            { "color": "#ffffff" }
+                            ]
+                        },
+                        {
+                            "featureType": "road",
+                            "elementType": "geometry",
+                            "stylers": [
+                            { "color": "#000000" }
+                            ]
+                        },
+                        {
+                            "featureType": "all",
+                            "elementType": "labels",
+                            "stylers": [
+                            { "visibility": "off" }
+                            ]
+                        },
+                        {
+                            "featureType": "poi",
+                            "elementType": "all",
+                            "stylers": [
+                            { "visibility": "off" }
+                            ]
+                        },
+                        {
+                            "featureType": "transit",
+                            "elementType": "all",
+                            "stylers": [
+                            { "visibility": "off" }
+                            ]
+                        },
+                        {
+                            "featureType": "water",
+                            "elementType": "all",
+                            "stylers": [
+                            { "color": "#ffffff" }
+                            ]
+                        }
+                        ],
+                    disableDefaultUI: true, // Disabilita tutti i controlli predefiniti
+                    zoomControl: true // Abilita solo il controllo dello zoom
+                });
+            }
+        </script>
+        
+    </body>
+</html>
