@@ -1,6 +1,7 @@
 let map;
 let marker;
 let text;
+let subtext;
 
 function initMap() {
     const initialPosition = { lat: 40.7128, lng: -74.0060 }; // Posizione di base (New York City)
@@ -75,11 +76,11 @@ function initMap() {
 
             map.setCenter(place.geometry.location);
             
-            addMarker(map.getCenter());
+            addCustomMarker(map.getCenter());
 
             // Aggiorna il testo visualizzato con l'indirizzo del luogo selezionato
             text = place.formatted_address || place.name;
-            document.getElementById('text-container').textContent = text;
+            document.getElementById('text-container').innerText = text;
             document.getElementById('text-input').value = text;
 
             if (place.geometry.viewport) {
@@ -101,6 +102,11 @@ function initMap() {
     // Aggiorna il testo visualizzato quando l'utente scrive nel campo di testo
     document.getElementById('text-input').addEventListener('input', (event) => {
         document.getElementById('text-container').textContent = event.target.value;
+    });
+    
+    // Aggiorna il testo visualizzato quando l'utente scrive nel campo di testo
+    document.getElementById('subtext-input').addEventListener('input', (event) => {
+        document.getElementById('subtext-container').textContent = event.target.value;
     });
 }
 

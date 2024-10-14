@@ -1,0 +1,13 @@
+#map {
+    width: min(500px, 80vw);
+    height: min(500px, 80vw);
+}
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+    #main-container {
+        height: 100vh;
+    }
+}
